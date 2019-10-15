@@ -5,11 +5,11 @@ from fabric import task
 def init_coad(c):
     c.run(create_local_yml_docker())
     print("#### Killing all container on docker ####\n")
-    # c.run('docker kill $(docker ps -q)')
+    #c.run('docker kill $(docker ps -q)')
     print("#### Creating network coad-network on docker ####\n")
     c.run('docker network create coad-network')
     print('#### Cloning backend from github ####')
-    c.run('git clone https://github.com/prefeiturasp/SME-Terceirizadas.git backend')
+    c.run('git clone https://github.com/prefeiturasp/SME-Contratos-BackEnd.git backend')
     print('#### Cloning frontend from github ####')
     c.run('git clone https://github.com/prefeiturasp/SME-Contratos-FrontEnd.git frontend')
     print('#### Creating env file inside backend ####')
